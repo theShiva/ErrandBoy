@@ -21,6 +21,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ErrandBoy.Database", "Erran
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrandBoy.Common.Tests", "ErrandBoy.Common.Tests\ErrandBoy.Common.Tests.csproj", "{C8F7C5F8-C4C6-4EC0-92F6-E0ECF9770E9F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrandBoy.Data.SqlServer.IntegrationTests", "ErrandBoy.Data.SqlServer.IntegrationTests\ErrandBoy.Data.SqlServer.IntegrationTests.csproj", "{03BA1BAA-83B4-4430-A802-46738A390EE0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,11 +63,16 @@ Global
 		{C8F7C5F8-C4C6-4EC0-92F6-E0ECF9770E9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8F7C5F8-C4C6-4EC0-92F6-E0ECF9770E9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8F7C5F8-C4C6-4EC0-92F6-E0ECF9770E9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03BA1BAA-83B4-4430-A802-46738A390EE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03BA1BAA-83B4-4430-A802-46738A390EE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03BA1BAA-83B4-4430-A802-46738A390EE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03BA1BAA-83B4-4430-A802-46738A390EE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C8F7C5F8-C4C6-4EC0-92F6-E0ECF9770E9F} = {E09C91F3-C5DE-4511-A961-F9402F98F992}
+		{03BA1BAA-83B4-4430-A802-46738A390EE0} = {E09C91F3-C5DE-4511-A961-F9402F98F992}
 	EndGlobalSection
 EndGlobal
