@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrandBoy.Web.Api.Integrati
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrandBoy.Web.Api.Tests", "ErrandBoy.Web.Api.Tests\ErrandBoy.Web.Api.Tests.csproj", "{3BC26C1E-1502-4067-A7DA-7D656F6A2CCF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrandBoy.Web.Common.Tests", "ErrandBoy.Web.Common.Tests\ErrandBoy.Web.Common.Tests.csproj", "{8C714B6C-6685-4FDC-A0A4-A06536127391}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +87,10 @@ Global
 		{3BC26C1E-1502-4067-A7DA-7D656F6A2CCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BC26C1E-1502-4067-A7DA-7D656F6A2CCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BC26C1E-1502-4067-A7DA-7D656F6A2CCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C714B6C-6685-4FDC-A0A4-A06536127391}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C714B6C-6685-4FDC-A0A4-A06536127391}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C714B6C-6685-4FDC-A0A4-A06536127391}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C714B6C-6685-4FDC-A0A4-A06536127391}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -95,5 +101,6 @@ Global
 		{35A936C1-23B2-4862-8F82-A87B89DA9E8D} = {E09C91F3-C5DE-4511-A961-F9402F98F992}
 		{3270A9F3-ADD4-411A-B240-23BECAF892C3} = {E09C91F3-C5DE-4511-A961-F9402F98F992}
 		{3BC26C1E-1502-4067-A7DA-7D656F6A2CCF} = {E09C91F3-C5DE-4511-A961-F9402F98F992}
+		{8C714B6C-6685-4FDC-A0A4-A06536127391} = {E09C91F3-C5DE-4511-A961-F9402F98F992}
 	EndGlobalSection
 EndGlobal
