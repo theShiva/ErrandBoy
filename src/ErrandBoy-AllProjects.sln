@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrandBoy.Data.SqlServer", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrandBoy.Web.Api.Models", "ErrandBoy.Web.Api.Models\ErrandBoy.Web.Api.Models.csproj", "{8A6937F1-0051-4147-9892-CD5E794AE541}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrandBoy.Web.Common", "ErrandBoy.Web.Common\ErrandBoy.Web.Common.csproj", "{8C29676E-B626-4B14-91DF-40BF97BD7409}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{8A6937F1-0051-4147-9892-CD5E794AE541}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A6937F1-0051-4147-9892-CD5E794AE541}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A6937F1-0051-4147-9892-CD5E794AE541}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C29676E-B626-4B14-91DF-40BF97BD7409}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C29676E-B626-4B14-91DF-40BF97BD7409}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C29676E-B626-4B14-91DF-40BF97BD7409}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C29676E-B626-4B14-91DF-40BF97BD7409}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
