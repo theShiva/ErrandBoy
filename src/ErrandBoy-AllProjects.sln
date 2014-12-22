@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E09C91F3
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ErrandBoy.Database", "ErrandBoy.Database\ErrandBoy.Database.sqlproj", "{E8C00E20-E69B-4A7B-8773-A2C43C4B2A6B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrandBoy.Common.Tests", "ErrandBoy.Common.Tests\ErrandBoy.Common.Tests.csproj", "{C8F7C5F8-C4C6-4EC0-92F6-E0ECF9770E9F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,8 +57,15 @@ Global
 		{E8C00E20-E69B-4A7B-8773-A2C43C4B2A6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8C00E20-E69B-4A7B-8773-A2C43C4B2A6B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E8C00E20-E69B-4A7B-8773-A2C43C4B2A6B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C8F7C5F8-C4C6-4EC0-92F6-E0ECF9770E9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8F7C5F8-C4C6-4EC0-92F6-E0ECF9770E9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8F7C5F8-C4C6-4EC0-92F6-E0ECF9770E9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8F7C5F8-C4C6-4EC0-92F6-E0ECF9770E9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C8F7C5F8-C4C6-4EC0-92F6-E0ECF9770E9F} = {E09C91F3-C5DE-4511-A961-F9402F98F992}
 	EndGlobalSection
 EndGlobal
