@@ -53,6 +53,16 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ErrandBoy.Common\ErrandBoy.Common.csproj">
+      <Project>{84c199b4-9c6d-4203-a260-96d38487fc4d}</Project>
+      <Name>ErrandBoy.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrandBoy.Data\ErrandBoy.Data.csproj">
+      <Project>{c43fc637-a2e8-400e-9465-3646898eda4f}</Project>
+      <Name>ErrandBoy.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
