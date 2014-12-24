@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Status]
+(
+	[StatusId] BIGINT NOT NULL PRIMARY KEY IDENTITY, 
+    [Name] NVARCHAR(100) NOT NULL, 
+    [Ordinal] INT NOT NULL, 
+    [ts] ROWVERSION NOT NULL
+)
