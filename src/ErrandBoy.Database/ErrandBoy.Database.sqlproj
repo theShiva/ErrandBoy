@@ -69,4 +69,7 @@
   <ItemGroup>
     <RefactorLog Include="ErrandBoy.Database.refactorlog" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\Bootstrap_Data.sql" />
+  </ItemGroup>
 </Project>
