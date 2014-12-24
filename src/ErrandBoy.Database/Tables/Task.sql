@@ -9,6 +9,6 @@
 [CreatedByUserId] bigint NOT NULL,
 [ts] rowversion NOT NULL,
 CONSTRAINT PK_Task PRIMARY KEY CLUSTERED ([TaskId] ASC),
-CONSTRAINT FK_Status_StatusId FOREIGN KEY ([StatusId]) REFERENCES [dbo].[Status] ([StatusId]),
-CONSTRAINT FK_User_UserId FOREIGN KEY ([CreatedByUserId]) REFERENCES [dbo].[User] ([UserId])
+CONSTRAINT FK_Task_Status_StatusId FOREIGN KEY ([StatusId]) REFERENCES [dbo].[Status] ([StatusId]),
+CONSTRAINT FK_Task_User_UserId FOREIGN KEY ([CreatedByUserId]) REFERENCES [dbo].[User] ([UserId])
 );
