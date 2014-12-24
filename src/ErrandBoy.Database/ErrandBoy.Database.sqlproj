@@ -60,4 +60,7 @@
     <Folder Include="Scripts" />
     <Folder Include="Tables" />
   </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\Status.sql" />
+  </ItemGroup>
 </Project>
