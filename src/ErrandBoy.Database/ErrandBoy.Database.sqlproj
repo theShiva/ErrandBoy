@@ -73,4 +73,7 @@
     <None Include="Scripts\Bootstrap_Data.sql" />
     <None Include="Scripts\Test_Data.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Script.ErrandBoy.PostDeployment.sql" />
+  </ItemGroup>
 </Project>
