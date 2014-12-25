@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{e8c00e20-e69b-4a7b-8773-a2c43c4b2a6b}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -72,6 +72,7 @@
   <ItemGroup>
     <None Include="Scripts\Bootstrap_Data.sql" />
     <None Include="Scripts\Test_Data.sql" />
+    <None Include="ErrandBoy.Database.Debug.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Script.ErrandBoy.PostDeployment.sql" />
