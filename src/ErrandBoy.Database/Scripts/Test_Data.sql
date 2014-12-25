@@ -19,7 +19,7 @@ begin
 	select top 1 @statusId = StatusId from Status order by StatusId;
 	select top 1 @userId = UserId from [User] order by UserId;
 
-	insert into dbo.Task(Subject, StartDate, StatusId, CreatedDate, CreatedUserId)
+	insert into dbo.Task(Subject, StartOnDate, StatusId, CreatedOnDate, CreatedByUserId)
 	values('Eat Cake Task 1', getdate(), @statusId, getdate(), @userId);
 	
 	set @taskId = SCOPE_IDENTITY();
