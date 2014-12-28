@@ -24,7 +24,7 @@ namespace ErrandBoy.Web.Common
         }
         public IDictionary<string, HttpControllerDescriptor> GetControllerMapping()
         {
-            throw new NotImplementedException();
+            return _controllers.Value;
         }
 
         public HttpControllerDescriptor SelectController(HttpRequestMessage request)
