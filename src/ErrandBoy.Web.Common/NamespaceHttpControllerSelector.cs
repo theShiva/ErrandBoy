@@ -62,7 +62,31 @@ namespace ErrandBoy.Web.Common
 
         private Dictionary<string, HttpControllerDescriptor> InitializeControllerDictionary()
         {
-            throw new NotImplementedException();
+            var dictionary = new Dictionary<string, HttpControllerDescriptor>(StringComparer.OrdinalIgnoreCase);
+
+            var assembliesResolver = _httpConfiguration.Services.GetAssembliesResolver();
+            var controllersResolver = _httpConfiguration.Services.GetHttpControllerTypeResolver();
+
+            var controllerTypes = controllersResolver.GetControllerTypes(assembliesResolver);
+
+            foreach (var controllerType in controllerTypes)
+            {
+                var segments = controllerType.Namespace.Split(Type.Delimiter);
+
+                var controllerName =
+                    controllerType.Name.Remove(controllerType.Name.Length -
+                                               DefaultHttpControllerSelector.ControllerSuffix.Length);
+
+                var controllerKey = String.Format(CultureInfo.InvariantCulture, "{0}.{1}", segments[segments.Length - 1],
+                    controllerName);
+
+                if (!dictionary.ContainsKey(controllerKey))
+                {
+                    dictionary[controllerKey] = new HttpControllerDescriptor(_httpConfiguration, controllerType.Name, controllerType: controllerType);
+                }
+            }
+
+            return dictionary;
         }
 
         private string GetControllerName(IHttpRouteData httpRouteData)
