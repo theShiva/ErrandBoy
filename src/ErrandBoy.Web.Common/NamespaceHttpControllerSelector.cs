@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Controllers;
@@ -21,16 +23,44 @@ namespace ErrandBoy.Web.Common
             _controllers = new Lazy<Dictionary<string, HttpControllerDescriptor>>(InitializeControllerDictionary);
         }
 
-        private Dictionary<string, HttpControllerDescriptor> InitializeControllerDictionary()
+        public HttpControllerDescriptor SelectController(HttpRequestMessage request)
         {
-            throw new NotImplementedException();
+            var routeData = request.GetRouteData();
+            if (routeData == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
+
+            var controllerName = GetControllerName(routeData);
+            if (controllerName == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
+
+            var namespaceName = GetVersion(routeData);
+            if (namespaceName == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
+
+            var controllerKey = String.Format(CultureInfo.InvariantCulture, "{0}.{1}", namespaceName, controllerName);
+
+            HttpControllerDescriptor controllerDescriptor;
+            if (_controllers.Value.TryGetValue(controllerKey, out controllerDescriptor))
+            {
+                return controllerDescriptor;
+            }
+
+            throw new HttpResponseException(HttpStatusCode.NotFound);
+
         }
+
         public IDictionary<string, HttpControllerDescriptor> GetControllerMapping()
         {
             return _controllers.Value;
         }
 
-        public HttpControllerDescriptor SelectController(HttpRequestMessage request)
+        private Dictionary<string, HttpControllerDescriptor> InitializeControllerDictionary()
         {
             throw new NotImplementedException();
         }
