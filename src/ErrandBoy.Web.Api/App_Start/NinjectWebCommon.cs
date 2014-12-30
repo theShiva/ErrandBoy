@@ -1,6 +1,6 @@
 using System;
 using System.Web;
-using ErrandBoy.Web.Api.App_Start;
+using ErrandBoy.Web.Api;
 using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 using Ninject;
 using Ninject.Web.Common;
@@ -9,7 +9,7 @@ using WebActivatorEx;
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(NinjectWebCommon), "Start")]
 [assembly: ApplicationShutdownMethod(typeof(NinjectWebCommon), "Stop")]
 
-namespace ErrandBoy.Web.Api.App_Start
+namespace ErrandBoy.Web.Api
 {
     public static class NinjectWebCommon 
     {
