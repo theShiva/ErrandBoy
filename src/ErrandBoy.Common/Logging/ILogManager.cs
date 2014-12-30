@@ -1,7 +1,7 @@
 ﻿using System;
 using log4net;
 
-namespace ErrandBoy.Web.Api.Logging
+namespace ErrandBoy.Common.Logging
 {
     public interface ILogManager
     {

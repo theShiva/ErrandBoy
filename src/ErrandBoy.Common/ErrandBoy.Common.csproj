@@ -68,6 +68,7 @@
     <Compile Include="DateTimeAdapter.cs" />
     <Compile Include="IDateTime.cs" />
     <Compile Include="Logging\ILogManager.cs" />
+    <Compile Include="Logging\LogManagerAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
