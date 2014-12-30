@@ -1,5 +1,6 @@
 using System;
 using System.Web;
+using ErrandBoy.Common;
 using ErrandBoy.Web.Api;
 using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 using Ninject;
@@ -61,6 +62,7 @@ namespace ErrandBoy.Web.Api
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind<IDateTime>().To<DateTimeAdapter>().InSingletonScope();
         }        
     }
 }
