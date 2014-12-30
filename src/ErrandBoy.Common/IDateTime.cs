@@ -2,7 +2,7 @@
 
 namespace ErrandBoy.Common
 {
-    interface IDateTime
+    public interface IDateTime
     {
         DateTime UtcNow { get; }
     }
