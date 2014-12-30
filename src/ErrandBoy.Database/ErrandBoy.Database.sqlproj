@@ -67,9 +67,6 @@
     <Build Include="Tables\TaskUser.sql" />
   </ItemGroup>
   <ItemGroup>
-    <RefactorLog Include="ErrandBoy.Database.refactorlog" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Scripts\Bootstrap_Data.sql" />
     <None Include="Scripts\Test_Data.sql" />
     <None Include="ErrandBoy.Database.Debug.publish.xml" />
