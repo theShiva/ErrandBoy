@@ -1,6 +1,6 @@
 ﻿namespace ErrandBoy.Data.Entities
 {
-    public class User
+    public class User : IVersionedEntity
     {
         public virtual long UserId { get; set; }
         public virtual string FirstName { get; set; }
