@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ErrandBoy.Data.Entities
 {
-    public class Task
+    public class Task : IVersionedEntity
     {
         private readonly IList<User> _users = new List<User>();
   
