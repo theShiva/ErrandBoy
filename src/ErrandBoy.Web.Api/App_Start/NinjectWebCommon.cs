@@ -1,7 +1,10 @@
 using System;
 using System.Web;
+using System.Web.Http;
 using ErrandBoy.Common;
 using ErrandBoy.Web.Api;
+using ErrandBoy.Web.Common;
+using FluentNHibernate.Infrastructure;
 using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 using Ninject;
 using Ninject.Web.Common;
@@ -14,7 +17,7 @@ namespace ErrandBoy.Web.Api
 {
     public static class NinjectWebCommon 
     {
-        private static readonly Bootstrapper bootstrapper = new Bootstrapper();
+        private static readonly Bootstrapper TheBootstrapper = new Bootstrapper();
 
         /// <summary>
         /// Starts the application
@@ -23,7 +26,15 @@ namespace ErrandBoy.Web.Api
         {
             DynamicModuleUtility.RegisterModule(typeof(OnePerRequestHttpModule));
             DynamicModuleUtility.RegisterModule(typeof(NinjectHttpModule));
-            bootstrapper.Initialize(CreateKernel);
+            IKernel container = null;
+            TheBootstrapper.Initialize(() =>
+            {
+                container = CreateKernel();
+                return container;
+            }) ;
+
+            var resolver = new NinjectDependencyResolver(container);
+            GlobalConfiguration.Configuration.DependencyResolver = resolver;
         }
         
         /// <summary>
@@ -31,7 +42,7 @@ namespace ErrandBoy.Web.Api
         /// </summary>
         public static void Stop()
         {
-            bootstrapper.ShutDown();
+            TheBootstrapper.ShutDown();
         }
         
         /// <summary>
