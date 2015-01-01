@@ -4,7 +4,6 @@ using System.Web.Http;
 using ErrandBoy.Common;
 using ErrandBoy.Web.Api;
 using ErrandBoy.Web.Common;
-using FluentNHibernate.Infrastructure;
 using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 using Ninject;
 using Ninject.Web.Common;
