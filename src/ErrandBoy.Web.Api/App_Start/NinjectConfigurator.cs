@@ -1,6 +1,7 @@
 ﻿using ErrandBoy.Common;
 using ErrandBoy.Common.Logging;
 using ErrandBoy.Data.SqlServer.Mapping;
+using ErrandBoy.Web.Common;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using log4net.Config;
@@ -47,6 +48,7 @@ namespace ErrandBoy.Web.Api
 
             container.Bind<ISessionFactory>().ToConstant(sessionFactory);
             container.Bind<ISession>().ToMethod(CreateSession).InRequestScope();
+            container.Bind<IActionTransactionHelper>().To<ActionTransactionHelper>().InRequestScope();
         }
 
         private ISession CreateSession(IContext context)
