@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Web.Http.Filters;
 using NHibernate;
+using NHibernate.Context;
 
 namespace ErrandBoy.Web.Common
 {
     public class ActionTransactionHelper : IActionTransactionHelper
     {
         private readonly ISessionFactory _sessionFactory;
+        public bool TransactionHandled { get; private set; }
+        public bool SessionClosed { get; private set; }
 
         public ActionTransactionHelper(ISessionFactory sessionFactory)
         {
@@ -15,17 +18,46 @@ namespace ErrandBoy.Web.Common
 
         public void BeginTransaction()
         {
-            throw new NotImplementedException();
+            if (!CurrentSessionContext.HasBind(_sessionFactory)) return;
+
+            var session = _sessionFactory.GetCurrentSession();
+            if (session != null)
+            {
+                session.BeginTransaction();
+            }
         }
 
         public void EndTransaction(HttpActionExecutedContext filterContext)
         {
-            throw new NotImplementedException();
+            if (!CurrentSessionContext.HasBind(_sessionFactory)) return;
+
+            var session = _sessionFactory.GetCurrentSession();
+
+            if (session == null) return;
+            if (!session.Transaction.IsActive) return;
+
+            if (filterContext.Exception == null)
+            {
+                session.Flush();
+                session.Transaction.Commit();
+            }
+            else
+            {
+                session.Transaction.Rollback();
+            }
+
+            TransactionHandled = true;
         }
 
         public void CloseSession()
         {
-            throw new NotImplementedException();
+            if (!CurrentSessionContext.HasBind(_sessionFactory)) return;
+
+            var session = _sessionFactory.GetCurrentSession();
+            session.Close();
+            session.Dispose();
+            CurrentSessionContext.Unbind(_sessionFactory);
+            SessionClosed = true;
         }
     }
 }
