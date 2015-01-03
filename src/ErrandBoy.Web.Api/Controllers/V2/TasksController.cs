@@ -1,10 +1,12 @@
 ﻿using System.Net.Http;
 using System.Web.Http;
 using ErrandBoy.Web.Api.Models;
+using ErrandBoy.Web.Common;
 
 namespace ErrandBoy.Web.Api.Controllers.V2
 {
     [RoutePrefix("api/{apiVersion:apiVersionConstraint(v2)}/tasks")]
+    [UnitOfWorkActionFilter]
     public class TasksController : ApiController
     {
         [Route("", Name = "AddTaskRouteV2")]
