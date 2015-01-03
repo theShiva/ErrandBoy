@@ -18,6 +18,7 @@ namespace ErrandBoy.Web.Api
 
             // Replace default implementation of controller selector to use our custom controller selector
             config.Services.Replace(typeof (IHttpControllerSelector) , new NamespaceHttpControllerSelector(config));
+            config.EnableSystemDiagnosticsTracing();
         }
     }
 }
