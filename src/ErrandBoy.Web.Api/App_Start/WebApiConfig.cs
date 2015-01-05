@@ -1,6 +1,8 @@
 ﻿using System.Web.Http;
 using System.Web.Http.Dispatcher;
 using System.Web.Http.Routing;
+using System.Web.Http.Tracing;
+using ErrandBoy.Common.Logging;
 using ErrandBoy.Web.Common;
 using ErrandBoy.Web.Common.Routing;
 
@@ -18,7 +20,8 @@ namespace ErrandBoy.Web.Api
 
             // Replace default implementation of controller selector to use our custom controller selector
             config.Services.Replace(typeof (IHttpControllerSelector) , new NamespaceHttpControllerSelector(config));
-            config.EnableSystemDiagnosticsTracing();
+            // config.EnableSystemDiagnosticsTracing(); // replacing this with our custom ITraceWriter
+            config.Services.Replace(typeof(ITraceWriter),new SimpleTraceWriter(WebContainerManager.Get<ILogManager>()));
         }
     }
 }
