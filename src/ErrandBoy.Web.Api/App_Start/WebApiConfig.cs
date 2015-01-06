@@ -1,9 +1,11 @@
 ﻿using System.Web.Http;
 using System.Web.Http.Dispatcher;
+using System.Web.Http.ExceptionHandling;
 using System.Web.Http.Routing;
 using System.Web.Http.Tracing;
 using ErrandBoy.Common.Logging;
 using ErrandBoy.Web.Common;
+using ErrandBoy.Web.Common.ErrorHandling;
 using ErrandBoy.Web.Common.Routing;
 
 namespace ErrandBoy.Web.Api
@@ -22,6 +24,7 @@ namespace ErrandBoy.Web.Api
             config.Services.Replace(typeof (IHttpControllerSelector) , new NamespaceHttpControllerSelector(config));
             // config.EnableSystemDiagnosticsTracing(); // replacing this with our custom ITraceWriter
             config.Services.Replace(typeof(ITraceWriter),new SimpleTraceWriter(WebContainerManager.Get<ILogManager>()));
+            config.Services.Add(typeof(IExceptionLogger),new SimpleExceptionLogger(WebContainerManager.Get<ILogManager>()));
         }
     }
 }
