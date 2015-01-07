@@ -106,7 +106,7 @@ namespace ErrandBoy.Web.Common
         private T GetRouteVariable<T>(IHttpRouteData httpRouteData, string name)
         {
             object result;
-            if (httpRouteData.Values.TryGetValue(name, out result)) ;
+            if (httpRouteData.Values.TryGetValue(name, out result)) 
             {
                 return (T)result;
             }
