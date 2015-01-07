@@ -72,6 +72,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionTransactionHelper.cs" />
+    <Compile Include="ErrorHandling\GlobalExceptionHandler.cs" />
+    <Compile Include="ErrorHandling\SimpleErrorResult.cs" />
     <Compile Include="ErrorHandling\SimpleExceptionLogger.cs" />
     <Compile Include="IActionTransactionHelper.cs" />
     <Compile Include="NamespaceHttpControllerSelector.cs" />
