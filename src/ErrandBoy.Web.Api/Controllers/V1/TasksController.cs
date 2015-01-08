@@ -17,7 +17,7 @@ namespace ErrandBoy.Web.Api.Controllers.V1
     {
         [Route("",Name = "AddTaskRoute")]
         [HttpPost]
-        public Task AddTask(HttpRequestMessage requestMessage, Task newTask)
+        public Task AddTask(HttpRequestMessage requestMessage, NewTask newTask)
         {
             return new Task()
             {
