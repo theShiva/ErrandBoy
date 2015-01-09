@@ -4,3 +4,66 @@ Space for capturing links, thoughts, and other application related stuff
 for the developer (myself), so that I don't lose track of them.
 
 93
+
+=========================
+|| git commands and links
+=========================
+
+change user name / email address across all commits: https://help.github.com/articles/changing-author-info/
+
+
+git clone --bare https://github.com/theShiva/ErrandBoy.git
+cd ErrandBoy.git
+
+../src/Scripts/git-fix-github-wrong-email-address-commits.sh
+git push --force --tags origin 'refs/heads/*'
+
+cd ..
+rm -rf ErrandBoy.git
+
+=============================
+git errors and resolution
+==========================
+
+$ git clone --bare https://github.com/theShiva/ErrandBoy.git
+Cloning into bare repository 'ErrandBoy.git'...
+fatal: unable to access 'https://github.com/theShiva/ErrandBoy.git/': Failed connect to github.com:443; No error
+
+FIX:
+====
+1. Find out the Proxy Server. 
+
+
+sfproxy.bankofthewest.com:8080
+
+git config --global http.proxy http://manjus01:Ashw1n16@sfproxy.bankofthewest.com:8080
+git config --global http.sslVerify false
+
+==============================================================
+
+manjus01@010L440AADM /D/Projects/ErrandBoy.git (BARE:master)
+$ ../git-fix-github-wrong-email-address-commits.sh
+Rewrite d62f979ce4b10935df205f12b4aac30c780c9e5c (109/109)
+Ref 'refs/heads/master' was rewritten
+
+manjus01@010L440AADM /D/Projects/ErrandBoy.git (BARE:master)
+
+---------------------------------------------------------
+
+Then
+
+manjus01@010L440AADM /D/Projects/ErrandBoy.git (BARE:master)
+$ git push --force --tags origin 'refs/heads/*'
+Username for 'https://github.com': theShiva
+Password for 'https://theShiva@github.com':
+Counting objects: 854, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (348/348), done.
+Writing objects: 100% (817/817), 8.99 MiB | 682.00 KiB/s, done.
+Total 817 (delta 445), reused 709 (delta 426)
+To https://github.com/theShiva/ErrandBoy.git
+ + d62f979...b228540 master -> master (forced update)
+
+manjus01@010L440AADM /D/Projects/ErrandBoy.git (BARE:master)
+
+=============================================================
