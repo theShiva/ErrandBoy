@@ -3,7 +3,7 @@ Application Notes:
 Space for capturing links, thoughts, and other application related stuff 
 for the developer (myself), so that I don't lose track of them.
 
-93
+96
 
 =========================
 || git commands and links
@@ -34,25 +34,23 @@ FIX:
 1. Find out the Proxy Server. 
 
 
-sfproxy.bankofthewest.com:8080
-
-git config --global http.proxy http://manjus01:Ashw1n16@sfproxy.bankofthewest.com:8080
+git config --global http.proxy http://lanuserid:lanpwd@proxyserver:port
 git config --global http.sslVerify false
 
 ==============================================================
 
-manjus01@010L440AADM /D/Projects/ErrandBoy.git (BARE:master)
+PROMPT> /D/Projects/ErrandBoy.git (BARE:master)
 $ ../git-fix-github-wrong-email-address-commits.sh
 Rewrite d62f979ce4b10935df205f12b4aac30c780c9e5c (109/109)
 Ref 'refs/heads/master' was rewritten
 
-manjus01@010L440AADM /D/Projects/ErrandBoy.git (BARE:master)
+PROMPT> /D/Projects/ErrandBoy.git (BARE:master)
 
 ---------------------------------------------------------
 
 Then
 
-manjus01@010L440AADM /D/Projects/ErrandBoy.git (BARE:master)
+PROMPT> /D/Projects/ErrandBoy.git (BARE:master)
 $ git push --force --tags origin 'refs/heads/*'
 Username for 'https://github.com': theShiva
 Password for 'https://theShiva@github.com':
@@ -64,6 +62,6 @@ Total 817 (delta 445), reused 709 (delta 426)
 To https://github.com/theShiva/ErrandBoy.git
  + d62f979...b228540 master -> master (forced update)
 
-manjus01@010L440AADM /D/Projects/ErrandBoy.git (BARE:master)
+PROMPT> /D/Projects/ErrandBoy.git (BARE:master)
 
 =============================================================
