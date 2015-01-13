@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Security.Claims;
+using System.Web;
 
 namespace ErrandBoy.Web.Common.Security
 {
@@ -6,7 +8,11 @@ namespace ErrandBoy.Web.Common.Security
     {
         public string Firstname
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                return ((ClaimsPrincipal)HttpContext.Current.User).FindFirst(ClaimTypes.
+                    GivenName).Value;
+            }
         }
 
         public string Lastname
