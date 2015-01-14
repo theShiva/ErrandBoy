@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Security.Claims;
 using System.Web;
+using System.Linq;
 
 namespace ErrandBoy.Web.Common.Security
 {
@@ -17,32 +18,50 @@ namespace ErrandBoy.Web.Common.Security
 
         public string Lastname
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                return ((ClaimsPrincipal)HttpContext.Current.User).FindFirst(ClaimTypes.Surname).
+                    Value;
+            }
         }
-
+        
         public string Username
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                return ((ClaimsPrincipal)HttpContext.Current.User).FindFirst(ClaimTypes.Name).
+                    Value;
+            }
         }
-
+        
         public bool IsInRole(string roleName)
         {
-            throw new NotImplementedException();
-        }
-
-        public string ApiVersionInUse
-        {
-            get { throw new NotImplementedException(); }
+            return HttpContext.Current.User.IsInRole(roleName);
         }
 
         public Uri RequestUri
         {
-            get { throw new NotImplementedException(); }
+            get { return HttpContext.Current.Request.Url; }
         }
-
+        
         public string HttpRequestMethod
         {
-            get { throw new NotImplementedException(); }
+            get { return HttpContext.Current.Request.HttpMethod; }
+        }
+        
+        public string ApiVersionInUse
+        {
+            get
+            {
+                const int versionIndex = 2;
+                if (HttpContext.Current.Request.Url.Segments.Count() < versionIndex + 1)
+                {
+                    return string.Empty;
+                }
+                var apiVersionInUse = HttpContext.Current.Request.Url.Segments[versionIndex].Replace(
+                "/", string.Empty);
+                return apiVersionInUse;
+            }
         }
     }
 }
