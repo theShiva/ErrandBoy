@@ -1,7 +1,9 @@
 ﻿using ErrandBoy.Common;
 using ErrandBoy.Common.Logging;
+using ErrandBoy.Common.Security;
 using ErrandBoy.Data.SqlServer.Mapping;
 using ErrandBoy.Web.Common;
+using ErrandBoy.Web.Common.Security;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using log4net.Config;
@@ -60,6 +62,13 @@ namespace ErrandBoy.Web.Api
                 CurrentSessionContext.Bind(session);
             }
             return sessionFactory.GetCurrentSession();
+        }
+
+        private void ConfigureUserSession(IKernel container)
+        {
+            var userSession = new UserSession();
+            container.Bind<IUserSession>().ToConstant(userSession).InSingletonScope();
+            container.Bind<IWebUserSession>().ToConstant(userSession).InSingletonScope();
         }
     }
 }
