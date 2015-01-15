@@ -25,6 +25,7 @@ namespace ErrandBoy.Web.Api
         private void AddBindings(IKernel container)
         {
             ConfigureLog4Net(container);
+            ConfigureUserSession(container);
             ConfigureNHibernate(container);
 
             container.Bind<IDateTime>().To<DateTimeAdapter>().InSingletonScope();
