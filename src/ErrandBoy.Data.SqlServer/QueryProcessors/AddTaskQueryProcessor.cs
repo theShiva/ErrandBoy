@@ -3,10 +3,11 @@ using ErrandBoy.Common;
 using ErrandBoy.Common.Security;
 using ErrandBoy.Data.Entities;
 using ErrandBoy.Data.Exceptions;
+using ErrandBoy.Data.QueryProcessors;
 using NHibernate;
 using Task = ErrandBoy.Data.Entities.Task;
 
-namespace ErrandBoy.Data.QueryProcessors
+namespace ErrandBoy.Data.SqlServer.QueryProcessors
 {
     public class AddTaskQueryProcessor : IAddTaskQueryProcessor
     {
