@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\lib\NHibernate.4.0.2.4000\lib\net40\NHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,7 +49,14 @@
     <Compile Include="Exceptions\ChildObjectNotFoundException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Exceptions\RootObjectNotFoundException.cs" />
+    <Compile Include="QueryProcessors\AddTaskQueryProcessor.cs" />
     <Compile Include="QueryProcessors\IAddTaskQueryProcessor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ErrandBoy.Common\ErrandBoy.Common.csproj">
+      <Project>{84C199B4-9C6D-4203-A260-96D38487FC4D}</Project>
+      <Name>ErrandBoy.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
