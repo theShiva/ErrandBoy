@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+﻿using ErrandBoy.Data.Entities;
 
 namespace ErrandBoy.Data.QueryProcessors
 {
