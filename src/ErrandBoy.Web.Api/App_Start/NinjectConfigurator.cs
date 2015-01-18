@@ -1,7 +1,9 @@
 ﻿using ErrandBoy.Common;
 using ErrandBoy.Common.Logging;
 using ErrandBoy.Common.Security;
+using ErrandBoy.Data.QueryProcessors;
 using ErrandBoy.Data.SqlServer.Mapping;
+using ErrandBoy.Data.SqlServer.QueryProcessors;
 using ErrandBoy.Web.Common;
 using ErrandBoy.Web.Common.Security;
 using FluentNHibernate.Cfg;
@@ -29,6 +31,7 @@ namespace ErrandBoy.Web.Api
             ConfigureNHibernate(container);
 
             container.Bind<IDateTime>().To<DateTimeAdapter>().InSingletonScope();
+            container.Bind<IAddTaskQueryProcessor>().To<AddTaskQueryProcessor>().InRequestScope();
         }
 
         private void ConfigureLog4Net(IKernel container)
