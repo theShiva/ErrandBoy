@@ -78,6 +78,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ErrandBoy.Web.Api.Models\ErrandBoy.Web.Api.Models.csproj">
+      <Project>{8A6937F1-0051-4147-9892-CD5E794AE541}</Project>
+      <Name>ErrandBoy.Web.Api.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\lib\AutoMapper.3.3.0\tools\AutoMapper.targets" Condition="Exists('..\..\lib\AutoMapper.3.3.0\tools\AutoMapper.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
