@@ -1,6 +1,7 @@
 ﻿using ErrandBoy.Common;
 using ErrandBoy.Common.Logging;
 using ErrandBoy.Common.Security;
+using ErrandBoy.Common.TypeMapping;
 using ErrandBoy.Data.QueryProcessors;
 using ErrandBoy.Data.SqlServer.Mapping;
 using ErrandBoy.Data.SqlServer.QueryProcessors;
@@ -29,6 +30,7 @@ namespace ErrandBoy.Web.Api
             ConfigureLog4Net(container);
             ConfigureUserSession(container);
             ConfigureNHibernate(container);
+            ConfigureAutoMapper(container);
 
             container.Bind<IDateTime>().To<DateTimeAdapter>().InSingletonScope();
             container.Bind<IAddTaskQueryProcessor>().To<AddTaskQueryProcessor>().InRequestScope();
@@ -73,6 +75,11 @@ namespace ErrandBoy.Web.Api
             var userSession = new UserSession();
             container.Bind<IUserSession>().ToConstant(userSession).InSingletonScope();
             container.Bind<IWebUserSession>().ToConstant(userSession).InSingletonScope();
+        }
+
+        private void ConfigureAutoMapper(IKernel container)
+        {
+            container.Bind<IAutoMapper>().To<AutoMapperAdapter>().InSingletonScope();
         }
     }
 }
