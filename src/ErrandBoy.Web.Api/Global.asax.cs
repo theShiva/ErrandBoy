@@ -1,6 +1,7 @@
 ﻿using System.Web;
 using System.Web.Http;
 using ErrandBoy.Common.Logging;
+using ErrandBoy.Common.TypeMapping;
 using ErrandBoy.Web.Common;
 
 namespace ErrandBoy.Web.Api
@@ -10,6 +11,9 @@ namespace ErrandBoy.Web.Api
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
+
+            new AutoMapperConfigurator().Configure(
+            WebContainerManager.GetAll<IAutoMapperTypeConfigurator>());
         }
 
         protected void Application_Error()
