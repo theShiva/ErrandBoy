@@ -113,6 +113,7 @@
     <Compile Include="App_Start\NinjectConfigurator.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="App_Start\AutoMapperConfigurator.cs" />
     <Compile Include="AutoMappingConfiguration\NewTaskToTaskEntityAutoMapperTypeConfigurator.cs" />
     <Compile Include="AutoMappingConfiguration\StatusEntityToStatusAutoMapperTypeConfigurator.cs" />
     <Compile Include="AutoMappingConfiguration\StatusToStatusEntityAutoMapperTypeConfigurator.cs" />
