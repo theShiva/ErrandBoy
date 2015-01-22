@@ -5,6 +5,7 @@ using ErrandBoy.Common.TypeMapping;
 using ErrandBoy.Data.QueryProcessors;
 using ErrandBoy.Data.SqlServer.Mapping;
 using ErrandBoy.Data.SqlServer.QueryProcessors;
+using ErrandBoy.Web.Api.AutoMappingConfiguration;
 using ErrandBoy.Web.Common;
 using ErrandBoy.Web.Common.Security;
 using FluentNHibernate.Cfg;
@@ -80,6 +81,25 @@ namespace ErrandBoy.Web.Api
         private void ConfigureAutoMapper(IKernel container)
         {
             container.Bind<IAutoMapper>().To<AutoMapperAdapter>().InSingletonScope();
+
+            container.Bind<IAutoMapperTypeConfigurator>()
+            .To<StatusEntityToStatusAutoMapperTypeConfigurator>()
+            .InSingletonScope();
+            container.Bind<IAutoMapperTypeConfigurator>()
+            .To<StatusToStatusEntityAutoMapperTypeConfigurator>()
+            .InSingletonScope();
+            container.Bind<IAutoMapperTypeConfigurator>()
+            .To<UserEntityToUserAutoMapperTypeConfigurator>()
+            .InSingletonScope();
+            container.Bind<IAutoMapperTypeConfigurator>()
+            .To<UserToUserEntityAutoMapperTypeConfigurator>()
+            .InSingletonScope();
+            container.Bind<IAutoMapperTypeConfigurator>()
+            .To<NewTaskToTaskEntityAutoMapperTypeConfigurator>()
+            .InSingletonScope();
+            container.Bind<IAutoMapperTypeConfigurator>()
+            .To<TaskEntityToTaskAutoMapperTypeConfigurator>()
+            .InSingletonScope();
         }
     }
 }
