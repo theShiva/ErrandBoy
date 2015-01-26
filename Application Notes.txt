@@ -3,6 +3,13 @@ Application Notes:
 Space for capturing links, thoughts, and other application related stuff 
 for the developer (myself), so that I don't lose track of them.
 
+//TODO: 26.Jan.2015 -- Monday
+Fix error with saving TasK
+
+task.CreatedBy = _session.QueryOver<User>().Where(x => x.Username ==
+_userSession.Username).SingleOrDefault();
+
+
 109
 
 =========================
