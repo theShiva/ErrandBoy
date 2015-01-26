@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using ErrandBoy.Common.TypeMapping;
+﻿using ErrandBoy.Common.TypeMapping;
 using ErrandBoy.Data.QueryProcessors;
 using ErrandBoy.Web.Api.Models;
-using Task = System.Threading.Tasks.Task;
+using Task = ErrandBoy.Web.Api.Models.Task;
 
 namespace ErrandBoy.Web.Api.MaintenanceProcessing
 {
