@@ -34,5 +34,9 @@
             public const string ApiVersionSegmentName = "apiVersion";
             public const string CurrentApiVersion = "v1";
         }
+        public static class SchemeTypes
+        {
+            public const string Basic = "basic";
+        }
     }
 }
